@@ -1,6 +1,6 @@
 variable "batch_type" {
   type        = string
-  description = "AWS Batch Compute Type ('ec2', 'fargate')"
+  description = "AWS Batch Compute Type ('ec2', 'fargate', 'fargate-spot')"
   default     = "ec2"
 }
 

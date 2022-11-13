@@ -59,7 +59,7 @@ resource "aws_batch_compute_environment" "this" {
     ]
 
     # Type of instance Amazon EC2 for on-demand. Can use "SPOT" to use unused instances at discount if available
-    type = local.enable_fargate_on_batch ? "FARGATE" : "EC2"
+    type = local.enable_fargate_on_batch ? "FARGATE" : local.enable_fargate_spot_on_batch ? "FARGATE_SPOT" : "EC2"
 
     tags = !local.enable_fargate_on_batch ? var.standard_tags : null
   }
